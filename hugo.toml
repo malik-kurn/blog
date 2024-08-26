@@ -3,6 +3,8 @@ languageCode = "en-us"
 title = "Welcome to Malik Kurnia Blog"
 theme="archie"
 copyright = "© Athul"
+favicon="https://malikkurn.my.id/assets/favicon.ico"  
+
 # Code Highlight
 pygmentsstyle = "monokai"
 pygmentscodefences = true
