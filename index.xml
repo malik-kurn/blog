@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Malik Kurnia Blog</title>
-    <link>https://malik-kurn.github.io/blog/</link>
+    <link>https://malikkurn.my.id/</link>
     <description>Recent content on Malik Kurnia Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 22 Aug 2024 09:19:51 +0700</lastBuildDate>
-    <atom:link href="https://malik-kurn.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://malikkurn.my.id/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hello World</title>
-      <link>https://malik-kurn.github.io/blog/posts/hello-world/</link>
+      <link>https://malikkurn.my.id/posts/hello-world/</link>
       <pubDate>Thu, 22 Aug 2024 09:19:51 +0700</pubDate>
-      <guid>https://malik-kurn.github.io/blog/posts/hello-world/</guid>
+      <guid>https://malikkurn.my.id/posts/hello-world/</guid>
       <description>Ini adalah postingan pertama saya pake Hugo!</description>
     </item>
   </channel>
