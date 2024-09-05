@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html><head lang="en">
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Installasi CHR 7 (RouterOS) - Malik Kurnia Blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Panduan singkat untuk menginstall CHR 7 (RouterOS) menggunakan command line." />
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content="https://malikkurn.my.id/posts/installasi_chr_routeros/">
+  <meta property="og:site_name" content="Malik Kurnia Blog">
+  <meta property="og:title" content="Installasi CHR 7 (RouterOS)">
+  <meta property="og:description" content="Panduan singkat untuk menginstall CHR 7 (RouterOS) menggunakan command line.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-09-05T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-09-05T00:00:00+00:00">
+    <meta property="article:tag" content="CHR">
+    <meta property="article:tag" content="RouterOS">
+    <meta property="article:tag" content="Mikrotik">
+    <meta property="article:tag" content="Installasi">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Installasi CHR 7 (RouterOS)">
+  <meta name="twitter:description" content="Panduan singkat untuk menginstall CHR 7 (RouterOS) menggunakan command line.">
+<script src="https://malikkurn.my.id/js/feather.min.js"></script>
+	
+	
+        <link href="https://malikkurn.my.id/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
+	
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://malikkurn.my.id/css/main.5cebd7d4fb2b97856af8d32a6def16164fcf7d844e98e236fcb3559655020373.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://malikkurn.my.id/css/dark.d22e2a2879d933a4b781535fc4c4c716e9f9d35ea4986dd0cbabda82effc4bdd.css"  disabled />
+	
+
+	
+	
+		<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		</script>
+
+		
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [['$','$'], ['\\(','\\)']],
+				displayMath: [['$$','$$'], ['\[','\]']],
+				processEscapes: true,
+				processEnvironments: true,
+				skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+				TeX: { equationNumbers: { autoNumber: "AMS" },
+						 extensions: ["AMSmath.js", "AMSsymbols.js"] }
+			}
+		});
+		</script>
+	
+
+	
+	
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body, {
+							delimiters: [
+									{left: "$$", right: "$$", display: true},
+									{left: "$", right: "$", display: false}
+							]
+					});
+			});
+			</script>
+	
+
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://malikkurn.my.id/">Malik Kurnia Blog</a>
+	</div>
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/posts">Posts</a>
+		
+		<a href="/about">About</a>
+		
+		<a href="/tags">Tags</a>
+		
+		| <span id="dark-mode-toggle" onclick="toggleTheme()"></span>
+		<script src="https://malikkurn.my.id/js/themetoggle.js"></script>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Installasi CHR 7 (RouterOS)</h1>
+			<div class="meta">Posted on Sep 5, 2024</div>
+		</div>
+		
+		<div class="tldr">
+			<strong>tl;dr:</strong>
+			Cara install CHR 7 (RouterOS) menggunakan perintah wget, gunzip, mount, dan dd.
+		</div>
+
+		
+		<div class="toc">
+		<strong>Table of contents:</strong>
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#langkah-langkah-installasi">Langkah-langkah Installasi</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+		</div>
+
+		<section class="body">
+			<p>Berikut adalah langkah-langkah untuk menginstall CHR (Cloud Hosted Router) versi 7.15.3 pada Mikrotik RouterOS menggunakan command line.</p>
+<h3 id="langkah-langkah-installasi">Langkah-langkah Installasi</h3>
+<ol>
+<li>
+<p>Unduh file image CHR menggunakan <code>wget</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://download.mikrotik.com/routeros/7.15.3/chr-7.15.3.img.zip -O chr.img.zip
+</span></span></code></pre></div></li>
+<li>
+<p>Ekstrak file image CHR dan hapus file zip:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gunzip -c chr.img.zip &gt; chr.img <span style="color:#f92672">&amp;&amp;</span> rm -f chr.img.zip
+</span></span></code></pre></div></li>
+<li>
+<p>Mount image ke dalam sistem:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mount -o loop,offset<span style="color:#f92672">=</span><span style="color:#66d9ef">$((</span><span style="color:#ae81ff">512</span><span style="color:#f92672">*</span><span style="color:#ae81ff">65570</span><span style="color:#66d9ef">))</span> chr.img /mnt
+</span></span></code></pre></div></li>
+<li>
+<p>Dapatkan alamat IP dan gateway dari server:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ADDRESS<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>ip addr show eth0 | grep global | cut -d<span style="color:#e6db74">&#39; &#39;</span> -f <span style="color:#ae81ff">6</span> | head -n 1<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>GATEWAY<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>ip route list | grep default | cut -d<span style="color:#e6db74">&#39; &#39;</span> -f 3<span style="color:#e6db74">`</span>
+</span></span></code></pre></div></li>
+<li>
+<p>Tambahkan konfigurasi IP dan route ke skrip <code>autorun.scr</code> di dalam image:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;/ip address add address=</span>$ADDRESS<span style="color:#e6db74"> interface=[/interface ethernet find where name=ether1] /ip route add gateway=</span>$GATEWAY<span style="color:#e6db74"> &#34;</span> &gt; /mnt/rw/autorun.scr
+</span></span></code></pre></div></li>
+<li>
+<p>Unmount image:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>umount /mnt
+</span></span></code></pre></div></li>
+<li>
+<p>Reboot sistem menggunakan perintah sysrq:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo u &gt; /proc/sysrq-trigger
+</span></span></code></pre></div></li>
+<li>
+<p>Tulis image ke disk menggunakan <code>dd</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>chr.img bs<span style="color:#f92672">=</span><span style="color:#ae81ff">1024</span> of<span style="color:#f92672">=</span>/dev/sda
+</span></span></code></pre></div></li>
+</ol>
+<p>Setelah langkah-langkah di atas selesai, CHR akan terinstall dan siap untuk digunakan. Pastikan untuk mengecek konektivitas jaringan setelah reboot.</p>
+
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/chr">CHR</a></li>
+					
+					<li><a href="/tags/routeros">RouterOS</a></li>
+					
+					<li><a href="/tags/mikrotik">Mikrotik</a></li>
+					
+					<li><a href="/tags/installasi">Installasi</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+		</article>
+</main>
+<footer>
+  <div style="display:flex"><a class="soc" href="https://github.com/malik-kurn/" rel="me" title="GitHub"><i data-feather="github"></i></a>
+    <a class="border"></a><a class="soc" href="https://twitter.com/malikkurn/" rel="me" title="Twitter"><i data-feather="twitter"></i></a>
+    <a class="border"></a></div>
+  <div class="footer-info">
+    2024  <a
+      href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+  </div>
+</footer>
+
+
+<script>
+  feather.replace()
+</script></div>
+    </body>
+</html>

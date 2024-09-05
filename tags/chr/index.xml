@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Malik Kurnia Blog</title>
-    <link>https://malikkurn.my.id/</link>
-    <description>Recent content on Malik Kurnia Blog</description>
+    <title>CHR on Malik Kurnia Blog</title>
+    <link>https://malikkurn.my.id/tags/chr/</link>
+    <description>Recent content in CHR on Malik Kurnia Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 05 Sep 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://malikkurn.my.id/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://malikkurn.my.id/tags/chr/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Installasi CHR 7 (RouterOS)</title>
       <link>https://malikkurn.my.id/posts/installasi_chr_routeros/</link>
       <pubDate>Thu, 05 Sep 2024 00:00:00 +0000</pubDate>
       <guid>https://malikkurn.my.id/posts/installasi_chr_routeros/</guid>
       <description>&lt;p&gt;Berikut adalah langkah-langkah untuk menginstall CHR (Cloud Hosted Router) versi 7.15.3 pada Mikrotik RouterOS menggunakan command line.&lt;/p&gt;&#xA;&lt;h3 id=&#34;langkah-langkah-installasi&#34;&gt;Langkah-langkah Installasi&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Unduh file image CHR menggunakan &lt;code&gt;wget&lt;/code&gt;:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wget https://download.mikrotik.com/routeros/7.15.3/chr-7.15.3.img.zip -O chr.img.zip&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Ekstrak file image CHR dan hapus file zip:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gunzip -c chr.img.zip &amp;gt; chr.img &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; rm -f chr.img.zip&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Mount image ke dalam sistem:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Hello World</title>
-      <link>https://malikkurn.my.id/posts/hello-world/</link>
-      <pubDate>Thu, 22 Aug 2024 09:19:51 +0700</pubDate>
-      <guid>https://malikkurn.my.id/posts/hello-world/</guid>
-      <description>&lt;p&gt;Ini adalah postingan pertama saya pake Hugo!&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
