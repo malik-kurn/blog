@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://malikkurn.my.id/tags/.htaccess/</loc>
+    <lastmod>2024-09-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://malikkurn.my.id/posts/merubah-versi-php-cpanel-via-htaccess/</loc>
+    <lastmod>2024-09-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://malikkurn.my.id/tags/hosting/</loc>
+    <lastmod>2024-09-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://malikkurn.my.id/</loc>
+    <lastmod>2024-09-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://malikkurn.my.id/tags/php/</loc>
+    <lastmod>2024-09-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://malikkurn.my.id/posts/</loc>
+    <lastmod>2024-09-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://malikkurn.my.id/tags/</loc>
+    <lastmod>2024-09-17T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://malikkurn.my.id/tags/chr/</loc>
     <lastmod>2024-09-05T00:00:00+00:00</lastmod>
   </url><url>
@@ -11,19 +32,10 @@
     <loc>https://malikkurn.my.id/posts/installasi_chr_routeros/</loc>
     <lastmod>2024-09-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://malikkurn.my.id/</loc>
-    <lastmod>2024-09-05T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://malikkurn.my.id/tags/mikrotik/</loc>
     <lastmod>2024-09-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://malikkurn.my.id/posts/</loc>
-    <lastmod>2024-09-05T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://malikkurn.my.id/tags/routeros/</loc>
-    <lastmod>2024-09-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://malikkurn.my.id/tags/</loc>
     <lastmod>2024-09-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://malikkurn.my.id/posts/hello-world/</loc>

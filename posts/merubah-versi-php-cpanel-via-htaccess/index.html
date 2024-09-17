@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html><head lang="en">
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Cara Mengubah Versi PHP dengan .htaccess - Malik Kurnia Blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Panduan singkat untuk mengubah versi PHP pada hosting yang tidak memiliki fitur Multi PHP Manager dengan menggunakan file .htaccess." />
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content="https://malikkurn.my.id/posts/merubah-versi-php-cpanel-via-htaccess/">
+  <meta property="og:site_name" content="Malik Kurnia Blog">
+  <meta property="og:title" content="Cara Mengubah Versi PHP dengan .htaccess">
+  <meta property="og:description" content="Panduan singkat untuk mengubah versi PHP pada hosting yang tidak memiliki fitur Multi PHP Manager dengan menggunakan file .htaccess.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-09-17T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-09-17T00:00:00+00:00">
+    <meta property="article:tag" content="PHP">
+    <meta property="article:tag" content=".Htaccess">
+    <meta property="article:tag" content="Hosting">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Cara Mengubah Versi PHP dengan .htaccess">
+  <meta name="twitter:description" content="Panduan singkat untuk mengubah versi PHP pada hosting yang tidak memiliki fitur Multi PHP Manager dengan menggunakan file .htaccess.">
+<script src="https://malikkurn.my.id/js/feather.min.js"></script>
+	
+	
+        <link href="https://malikkurn.my.id/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
+	
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://malikkurn.my.id/css/main.5cebd7d4fb2b97856af8d32a6def16164fcf7d844e98e236fcb3559655020373.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://malikkurn.my.id/css/dark.d22e2a2879d933a4b781535fc4c4c716e9f9d35ea4986dd0cbabda82effc4bdd.css"  disabled />
+	
+
+	
+	
+		<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		</script>
+
+		
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [['$','$'], ['\\(','\\)']],
+				displayMath: [['$$','$$'], ['\[','\]']],
+				processEscapes: true,
+				processEnvironments: true,
+				skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+				TeX: { equationNumbers: { autoNumber: "AMS" },
+						 extensions: ["AMSmath.js", "AMSsymbols.js"] }
+			}
+		});
+		</script>
+	
+
+	
+	
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body, {
+							delimiters: [
+									{left: "$$", right: "$$", display: true},
+									{left: "$", right: "$", display: false}
+							]
+					});
+			});
+			</script>
+	
+
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://malikkurn.my.id/">Malik Kurnia Blog</a>
+	</div>
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/posts">Posts</a>
+		
+		<a href="/about">About</a>
+		
+		<a href="/tags">Tags</a>
+		
+		| <span id="dark-mode-toggle" onclick="toggleTheme()"></span>
+		<script src="https://malikkurn.my.id/js/themetoggle.js"></script>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Cara Mengubah Versi PHP dengan .htaccess</h1>
+			<div class="meta">Posted on Sep 17, 2024</div>
+		</div>
+		
+		<div class="tldr">
+			<strong>tl;dr:</strong>
+			Cara mengubah versi PHP dengan .htaccess
+		</div>
+
+		
+		<div class="toc">
+		<strong>Table of contents:</strong>
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#kode-untuk-mengubah-versi-php">Kode untuk Mengubah Versi PHP</a>
+      <ul>
+        <li><a href="#versi-51">Versi 5.1</a></li>
+        <li><a href="#versi-52">Versi 5.2</a></li>
+        <li><a href="#versi-53">Versi 5.3</a></li>
+        <li><a href="#versi-54">Versi 5.4</a></li>
+        <li><a href="#versi-55">Versi 5.5</a></li>
+        <li><a href="#versi-56">Versi 5.6</a></li>
+        <li><a href="#versi-70">Versi 7.0</a></li>
+        <li><a href="#versi-71">Versi 7.1</a></li>
+        <li><a href="#versi-72">Versi 7.2</a></li>
+        <li><a href="#versi-73">Versi 7.3</a></li>
+        <li><a href="#versi-74">Versi 7.4</a></li>
+        <li><a href="#versi-80">Versi 8.0</a></li>
+        <li><a href="#versi-81">Versi 8.1</a></li>
+        <li><a href="#versi-82">Versi 8.2</a></li>
+        <li><a href="#versi-83">Versi 8.3</a></li>
+      </ul>
+    </li>
+    <li><a href="#cara-menggunakan">Cara Menggunakan</a></li>
+  </ul>
+</nav>
+		</div>
+
+		<section class="body">
+			<p>Bagi Anda yang mengalami kesulitan saat ingin mengubah versi PHP pada hosting namun hosting tersebut tidak menyediakan fitur Multi PHP Manager, Anda dapat mengatasinya dengan menambahkan kode pada file <code>.htaccess</code>.</p>
+<h2 id="kode-untuk-mengubah-versi-php">Kode untuk Mengubah Versi PHP</h2>
+<p>Berikut adalah kode yang dapat Anda tambahkan ke dalam file <code>.htaccess</code> untuk mengatur versi PHP yang ingin digunakan.</p>
+<h3 id="versi-51">Versi 5.1</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#f92672">&lt;FilesMatch</span> <span style="color:#e6db74">&#34;\.(php4|php5|php3|php2|php|phtml)$&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>SetHandler application/x-httpd-alt-php51___lsphp
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/FilesMatch&gt;</span>
+</span></span></code></pre></div><h3 id="versi-52">Versi 5.2</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#f92672">&lt;FilesMatch</span> <span style="color:#e6db74">&#34;\.(php4|php5|php3|php2|php|phtml)$&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>SetHandler application/x-httpd-alt-php52___lsphp
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/FilesMatch&gt;</span>
+</span></span></code></pre></div><h3 id="versi-53">Versi 5.3</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#f92672">&lt;FilesMatch</span> <span style="color:#e6db74">&#34;\.(php4|php5|php3|php2|php|phtml)$&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>SetHandler application/x-httpd-alt-php53___lsphp
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/FilesMatch&gt;</span>
+</span></span></code></pre></div><h3 id="versi-54">Versi 5.4</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#f92672">&lt;FilesMatch</span> <span style="color:#e6db74">&#34;\.(php4|php5|php3|php2|php|phtml)$&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>SetHandler application/x-httpd-alt-php54___lsphp
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/FilesMatch&gt;</span>
+</span></span></code></pre></div><h3 id="versi-55">Versi 5.5</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#f92672">&lt;FilesMatch</span> <span style="color:#e6db74">&#34;\.(php4|php5|php3|php2|php|phtml)$&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>SetHandler application/x-httpd-alt-php55___lsphp
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/FilesMatch&gt;</span>
+</span></span></code></pre></div><h3 id="versi-56">Versi 5.6</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#f92672">&lt;FilesMatch</span> <span style="color:#e6db74">&#34;\.(php4|php5|php3|php2|php|phtml)$&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>SetHandler application/x-httpd-alt-php56___lsphp
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/FilesMatch&gt;</span>
+</span></span></code></pre></div><h3 id="versi-70">Versi 7.0</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#f92672">&lt;FilesMatch</span> <span style="color:#e6db74">&#34;\.(php4|php5|php3|php2|php|phtml)$&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>SetHandler application/x-httpd-alt-php70___lsphp
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/FilesMatch&gt;</span>
+</span></span></code></pre></div><h3 id="versi-71">Versi 7.1</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#f92672">&lt;FilesMatch</span> <span style="color:#e6db74">&#34;\.(php4|php5|php3|php2|php|phtml)$&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>SetHandler application/x-httpd-alt-php71___lsphp
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/FilesMatch&gt;</span>
+</span></span></code></pre></div><h3 id="versi-72">Versi 7.2</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#f92672">&lt;FilesMatch</span> <span style="color:#e6db74">&#34;\.(php4|php5|php3|php2|php|phtml)$&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>SetHandler application/x-httpd-alt-php72___lsphp
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/FilesMatch&gt;</span>
+</span></span></code></pre></div><h3 id="versi-73">Versi 7.3</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#f92672">&lt;FilesMatch</span> <span style="color:#e6db74">&#34;\.(php4|php5|php3|php2|php|phtml)$&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>SetHandler application/x-httpd-alt-php73___lsphp
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/FilesMatch&gt;</span>
+</span></span></code></pre></div><h3 id="versi-74">Versi 7.4</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#f92672">&lt;FilesMatch</span> <span style="color:#e6db74">&#34;\.(php4|php5|php3|php2|php|phtml)$&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>SetHandler application/x-httpd-alt-php74___lsphp
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/FilesMatch&gt;</span>
+</span></span></code></pre></div><h3 id="versi-80">Versi 8.0</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#f92672">&lt;FilesMatch</span> <span style="color:#e6db74">&#34;\.(php4|php5|php3|php2|php|phtml)$&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>SetHandler application/x-httpd-alt-php80___lsphp
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/FilesMatch&gt;</span>
+</span></span></code></pre></div><h3 id="versi-81">Versi 8.1</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#f92672">&lt;FilesMatch</span> <span style="color:#e6db74">&#34;\.(php4|php5|php3|php2|php|phtml)$&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>SetHandler application/x-httpd-alt-php81___lsphp
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/FilesMatch&gt;</span>
+</span></span></code></pre></div><h3 id="versi-82">Versi 8.2</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#f92672">&lt;FilesMatch</span> <span style="color:#e6db74">&#34;\.(php4|php5|php3|php2|php|phtml)$&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>SetHandler application/x-httpd-alt-php82___lsphp
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/FilesMatch&gt;</span>
+</span></span></code></pre></div><h3 id="versi-83">Versi 8.3</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#f92672">&lt;FilesMatch</span> <span style="color:#e6db74">&#34;\.(php4|php5|php3|php2|php|phtml)$&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>SetHandler application/x-httpd-alt-php83___lsphp
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/FilesMatch&gt;</span>
+</span></span></code></pre></div><h2 id="cara-menggunakan">Cara Menggunakan</h2>
+<ol>
+<li>Buka file <code>.htaccess</code> di direktori root situs Anda.</li>
+<li>Tambahkan kode yang sesuai dengan versi PHP yang ingin Anda gunakan.</li>
+<li>Simpan perubahan dan cek situs Anda untuk memastikan PHP berjalan pada versi yang diinginkan.</li>
+</ol>
+<blockquote>
+<p><strong>Catatan:</strong> Sebelum melakukan perubahan, pastikan untuk mencadangkan file <code>.htaccess</code> Anda.</p>
+</blockquote>
+
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/php">PHP</a></li>
+					
+					<li><a href="/tags/.htaccess">.htaccess</a></li>
+					
+					<li><a href="/tags/hosting">Hosting</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+		</article>
+</main>
+<footer>
+  <div style="display:flex"><a class="soc" href="https://github.com/malik-kurn/" rel="me" title="GitHub"><i data-feather="github"></i></a>
+    <a class="border"></a><a class="soc" href="https://twitter.com/malikkurn/" rel="me" title="Twitter"><i data-feather="twitter"></i></a>
+    <a class="border"></a></div>
+  <div class="footer-info">
+    2024  <a
+      href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+  </div>
+</footer>
+
+
+<script>
+  feather.replace()
+</script></div>
+    </body>
+</html>
