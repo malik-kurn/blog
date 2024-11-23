@@ -1,45 +1,25 @@
 <!DOCTYPE html>
 <html><head lang="en">
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Default .Htaccess Wordpress - Malik Kurnia Blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Default .htaccess WordPress
-File .htaccess adalah file konfigurasi yang digunakan oleh server web Apache untuk mengatur aturan khusus pada direktori tertentu. Dalam instalasi WordPress, file .htaccess sering digunakan untuk mengatur permalinks dan pengaturan lainnya.
-Berikut adalah contoh default isi file .htaccess untuk WordPress:
-# BEGIN WordPress
-&lt;IfModule mod_rewrite.c&gt;
-RewriteEngine On
-RewriteBase /
-RewriteRule ^index\.php$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
-&lt;/IfModule&gt;
-# END WordPress
-Penjelasan Isi File .htaccess
-
-
-&lt;IfModule mod_rewrite.c&gt;
-Blok ini memastikan bahwa modul mod_rewrite di Apache aktif. Jika modul ini tidak aktif, aturan rewrite di dalamnya tidak akan dijalankan." />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Default .htaccess Wordpress - Malik Kurnia Blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Panduan singkat untuk terkait file .htaccess Wordpress untuk hosting" />
 	<meta property="og:image" content=""/>
 	<meta property="og:url" content="https://malikkurn.my.id/posts/default-.htaccess-wordpress/">
   <meta property="og:site_name" content="Malik Kurnia Blog">
-  <meta property="og:title" content="Default .Htaccess Wordpress">
-  <meta property="og:description" content="Default .htaccess WordPress File .htaccess adalah file konfigurasi yang digunakan oleh server web Apache untuk mengatur aturan khusus pada direktori tertentu. Dalam instalasi WordPress, file .htaccess sering digunakan untuk mengatur permalinks dan pengaturan lainnya.
-Berikut adalah contoh default isi file .htaccess untuk WordPress:
-# BEGIN WordPress &lt;IfModule mod_rewrite.c&gt; RewriteEngine On RewriteBase / RewriteRule ^index\.php$ - [L] RewriteCond %{REQUEST_FILENAME} !-f RewriteCond %{REQUEST_FILENAME} !-d RewriteRule . /index.php [L] &lt;/IfModule&gt; # END WordPress Penjelasan Isi File .htaccess &lt;IfModule mod_rewrite.c&gt;
-Blok ini memastikan bahwa modul mod_rewrite di Apache aktif. Jika modul ini tidak aktif, aturan rewrite di dalamnya tidak akan dijalankan.">
+  <meta property="og:title" content="Default .htaccess Wordpress">
+  <meta property="og:description" content="Panduan singkat untuk terkait file .htaccess Wordpress untuk hosting">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-11-23T14:58:15+07:00">
-    <meta property="article:modified_time" content="2024-11-23T14:58:15+07:00">
+    <meta property="article:published_time" content="2024-11-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-11-23T00:00:00+00:00">
+    <meta property="article:tag" content="Wordpress">
+    <meta property="article:tag" content="Hosting">
+    <meta property="article:tag" content="Tutorial">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Default .Htaccess Wordpress">
-  <meta name="twitter:description" content="Default .htaccess WordPress File .htaccess adalah file konfigurasi yang digunakan oleh server web Apache untuk mengatur aturan khusus pada direktori tertentu. Dalam instalasi WordPress, file .htaccess sering digunakan untuk mengatur permalinks dan pengaturan lainnya.
-Berikut adalah contoh default isi file .htaccess untuk WordPress:
-# BEGIN WordPress &lt;IfModule mod_rewrite.c&gt; RewriteEngine On RewriteBase / RewriteRule ^index\.php$ - [L] RewriteCond %{REQUEST_FILENAME} !-f RewriteCond %{REQUEST_FILENAME} !-d RewriteRule . /index.php [L] &lt;/IfModule&gt; # END WordPress Penjelasan Isi File .htaccess &lt;IfModule mod_rewrite.c&gt;
-Blok ini memastikan bahwa modul mod_rewrite di Apache aktif. Jika modul ini tidak aktif, aturan rewrite di dalamnya tidak akan dijalankan.">
+  <meta name="twitter:title" content="Default .htaccess Wordpress">
+  <meta name="twitter:description" content="Panduan singkat untuk terkait file .htaccess Wordpress untuk hosting">
 <script src="https://malikkurn.my.id/js/feather.min.js"></script>
 	
 	
@@ -118,12 +98,27 @@ Blok ini memastikan bahwa modul mod_rewrite di Apache aktif. Jika modul ini tida
 <main>
 	<article>
 		<div class="title">
-			<h1 class="title">Default .Htaccess Wordpress</h1>
+			<h1 class="title">Default .htaccess Wordpress</h1>
 			<div class="meta">Posted on Nov 23, 2024</div>
 		</div>
 		
+		<div class="tldr">
+			<strong>tl;dr:</strong>
+			File default .htaccess Wordpress
+		</div>
 
 		
+		<div class="toc">
+		<strong>Table of contents:</strong>
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#penjelasan-isi-file-htaccess">Penjelasan Isi File <code>.htaccess</code></a></li>
+    <li><a href="#ketika-file-htaccess-tidak-ada">Ketika File <code>.htaccess</code> Tidak Ada</a></li>
+    <li><a href="#mengatasi-masalah-dengan-htaccess">Mengatasi Masalah dengan <code>.htaccess</code></a></li>
+    <li><a href="#kesimpulan">Kesimpulan</a></li>
+  </ul>
+</nav>
+		</div>
 
 		<section class="body">
 			<h1 id="default-htaccess-wordpress">Default .htaccess WordPress</h1>
@@ -198,6 +193,18 @@ Jika Anda mengubah pengaturan permalinks di dashboard WordPress dan tidak berfun
 
 		<div class="post-tags">
 			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/wordpress">Wordpress</a></li>
+					
+					<li><a href="/tags/hosting">Hosting</a></li>
+					
+					<li><a href="/tags/tutorial">Tutorial</a></li>
+					
+				</ul>
+			</nav>
 			
 			
 		</div>
