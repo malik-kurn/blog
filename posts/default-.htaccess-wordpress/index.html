@@ -160,7 +160,7 @@ Menentukan kondisi bahwa file yang diminta tidak ada secara fisik.</p>
 Menentukan kondisi bahwa direktori yang diminta tidak ada secara fisik.</p>
 </li>
 <li>
-<p><strong><code>RewriteRule . /index.php [L]</code></strong><br>
+<p><strong><code>RewriteRule . /index.php</code></strong><br>
 Aturan ini mengarahkan semua permintaan (yang tidak mengarah ke file atau direktori yang ada) ke <code>index.php</code>. Inilah inti dari mekanisme permalink WordPress.</p>
 </li>
 </ol>
@@ -172,16 +172,10 @@ Aturan ini mengarahkan semua permintaan (yang tidak mengarah ke file atau direkt
 <li>Simpan file di direktori root instalasi WordPress (biasanya di tempat file <code>wp-config.php</code> berada).</li>
 </ol>
 <h2 id="mengatasi-masalah-dengan-htaccess">Mengatasi Masalah dengan <code>.htaccess</code></h2>
-<ul>
-<li>
 <p><strong>Error 500 Internal Server Error</strong><br>
 Jika terdapat kesalahan konfigurasi di <code>.htaccess</code>, server bisa menghasilkan error ini. Pastikan isi file <code>.htaccess</code> sesuai dengan format yang benar.</p>
-</li>
-<li>
 <p><strong>Permalinks Tidak Berfungsi</strong><br>
 Jika Anda mengubah pengaturan permalinks di dashboard WordPress dan tidak berfungsi, pastikan server Anda mendukung <code>mod_rewrite</code> dan file <code>.htaccess</code> dapat ditulis oleh WordPress. Berikan izin file yang sesuai (biasanya <code>644</code> atau <code>755</code> untuk keamanan).</p>
-</li>
-</ul>
 <h2 id="kesimpulan">Kesimpulan</h2>
 <p>File <code>.htaccess</code> adalah elemen penting dalam pengelolaan WordPress, khususnya dalam konfigurasi permalinks. Pastikan file ini ada dan isinya sesuai dengan kebutuhan instalasi WordPress Anda untuk memastikan situs berjalan dengan lancar.</p>
 <blockquote>
