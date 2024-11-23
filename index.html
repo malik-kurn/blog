@@ -98,6 +98,78 @@
 				
 				
 				<section class="list-item">
+					<h1 class="title"><a href="/posts/default-.htaccess-wordpress/">Default .Htaccess Wordpress</a></h1>
+					<time>Nov 23, 2024</time>
+					<br><div class="description">
+	
+	<h1 id="default-htaccess-wordpress">Default .htaccess WordPress</h1>
+<p>File <code>.htaccess</code> adalah file konfigurasi yang digunakan oleh server web Apache untuk mengatur aturan khusus pada direktori tertentu. Dalam instalasi WordPress, file <code>.htaccess</code> sering digunakan untuk mengatur <strong>permalinks</strong> dan pengaturan lainnya.</p>
+<p>Berikut adalah contoh default isi file <code>.htaccess</code> untuk WordPress:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#75715e"># BEGIN WordPress</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;IfModule</span> <span style="color:#e6db74">mod_rewrite.c</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>RewriteEngine <span style="color:#66d9ef">On</span>
+</span></span><span style="display:flex;"><span>RewriteBase /
+</span></span><span style="display:flex;"><span>RewriteRule ^index\.php$ - [L]
+</span></span><span style="display:flex;"><span>RewriteCond %{REQUEST_FILENAME} !-f
+</span></span><span style="display:flex;"><span>RewriteCond %{REQUEST_FILENAME} !-d
+</span></span><span style="display:flex;"><span>RewriteRule . <span style="color:#e6db74">/index.php</span> [L]
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/IfModule&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># END WordPress</span>
+</span></span></code></pre></div><h2 id="penjelasan-isi-file-htaccess">Penjelasan Isi File <code>.htaccess</code></h2>
+<ol>
+<li>
+<p><strong><code>&lt;IfModule mod_rewrite.c&gt;</code></strong><br>
+Blok ini memastikan bahwa modul <code>mod_rewrite</code> di Apache aktif. Jika modul ini tidak aktif, aturan rewrite di dalamnya tidak akan dijalankan.</p>&hellip;
+	
+</div>
+					<a class="readmore" href="/posts/default-.htaccess-wordpress/">Read more ⟶</a>
+				</section>
+				
+				<section class="list-item">
+					<h1 class="title"><a href="/posts/default-index-wordpress/">Default Index Wordpress</a></h1>
+					<time>Nov 23, 2024</time>
+					<br><div class="description">
+	
+	<h1 id="default-indexphp-wordpress">Default Index.php WordPress</h1>
+<p>Pada setiap instalasi WordPress, file <code>index.php</code> memiliki peran penting dalam menjalankan situs web. File ini bertanggung jawab untuk menangani permintaan yang diterima oleh server dan menyajikan konten yang sesuai kepada pengunjung. Meskipun WordPress memiliki berbagai file dan direktori yang lebih spesifik, <code>index.php</code> adalah file utama yang diakses saat sebuah halaman diminta.</p>
+<h2 id="struktur-dasar-indexphp">Struktur Dasar <code>index.php</code></h2>
+<p>Berikut adalah contoh sederhana dari file <code>index.php</code> pada instalasi WordPress default:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> * The main template file.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> *
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> * This file is used to display a page when nothing more specific matches a query.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> * e.g., it puts together the home page when no home.php file exists.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> *
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> * @link https://codex.wordpress.org/Template_Hierarchy
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> *
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> * @package WordPress
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">get_header</span>(); <span style="color:#75715e">// Memanggil file header.php
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ( <span style="color:#a6e22e">have_posts</span>() ) <span style="color:#f92672">:</span> <span style="color:#75715e">// Memeriksa apakah ada post yang tersedia
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">while</span> ( <span style="color:#a6e22e">have_posts</span>() ) <span style="color:#f92672">:</span> <span style="color:#a6e22e">the_post</span>(); <span style="color:#75715e">// Loop untuk setiap post
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">get_template_part</span>( <span style="color:#e6db74">&#39;template-parts/content&#39;</span>, <span style="color:#a6e22e">get_post_format</span>() ); <span style="color:#75715e">// Memanggil bagian konten
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">endwhile</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">the_posts_navigation</span>(); <span style="color:#75715e">// Navigasi untuk halaman selanjutnya
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span> <span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">get_template_part</span>( <span style="color:#e6db74">&#39;template-parts/content&#39;</span>, <span style="color:#e6db74">&#39;none&#39;</span> ); <span style="color:#75715e">// Menampilkan pesan jika tidak ada post
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">endif</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">get_footer</span>(); <span style="color:#75715e">// Memanggil file footer.php
+</span></span></span></code></pre></div><h3 id="penjelasan-struktur-indexphp">Penjelasan Struktur <code>index.php</code></h3>
+<ol>
+<li>
+<p><strong><code>get_header()</code></strong>: Fungsi ini memanggil file <code>header.php</code>, yang umumnya berisi elemen HTML <code>&lt;head&gt;</code> dan bagian atas situs (seperti logo, menu navigasi).</p>&hellip;
+	
+</div>
+					<a class="readmore" href="/posts/default-index-wordpress/">Read more ⟶</a>
+				</section>
+				
+				<section class="list-item">
 					<h1 class="title"><a href="/posts/merubah-versi-php-cpanel-via-htaccess/">Cara Mengubah Versi PHP dengan .htaccess</a></h1>
 					<time>Sep 17, 2024</time>
 					<br><div class="description">
@@ -108,18 +180,18 @@
 					<a class="readmore" href="/posts/merubah-versi-php-cpanel-via-htaccess/">Read more ⟶</a>
 				</section>
 				
-				<section class="list-item">
-					<h1 class="title"><a href="/posts/installasi_chr_routeros/">Installasi CHR 7 (RouterOS)</a></h1>
-					<time>Sep 5, 2024</time>
-					<br><div class="description">
-	
-	Panduan singkat untuk menginstall CHR 7 (RouterOS) menggunakan command line.
-	
-</div>
-					<a class="readmore" href="/posts/installasi_chr_routeros/">Read more ⟶</a>
-				</section>
 				
-				
+
+<ul class="pagination">
+	<span class="page-item page-prev">
+	
+	</span>
+	<span class="page-item page-next">
+	
+    <a href="/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">Next →</span></a>
+	
+	</span>
+</ul>
 
 
 			</main>

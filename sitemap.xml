@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://malikkurn.my.id/posts/default-.htaccess-wordpress/</loc>
+    <lastmod>2024-11-23T14:58:15+07:00</lastmod>
+  </url><url>
+    <loc>https://malikkurn.my.id/</loc>
+    <lastmod>2024-11-23T14:58:15+07:00</lastmod>
+  </url><url>
+    <loc>https://malikkurn.my.id/posts/</loc>
+    <lastmod>2024-11-23T14:58:15+07:00</lastmod>
+  </url><url>
+    <loc>https://malikkurn.my.id/posts/default-index-wordpress/</loc>
+    <lastmod>2024-11-23T14:57:54+07:00</lastmod>
+  </url><url>
     <loc>https://malikkurn.my.id/tags/.htaccess/</loc>
     <lastmod>2024-09-17T00:00:00+00:00</lastmod>
   </url><url>
@@ -11,13 +23,7 @@
     <loc>https://malikkurn.my.id/tags/hosting/</loc>
     <lastmod>2024-09-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://malikkurn.my.id/</loc>
-    <lastmod>2024-09-17T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://malikkurn.my.id/tags/php/</loc>
-    <lastmod>2024-09-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://malikkurn.my.id/posts/</loc>
     <lastmod>2024-09-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://malikkurn.my.id/tags/</loc>
